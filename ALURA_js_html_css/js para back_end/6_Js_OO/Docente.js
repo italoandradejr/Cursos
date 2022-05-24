@@ -1,9 +1,7 @@
-"use strict"
-
 import User from "./User.js";
 
 export default class Docente extends User {
-    constructor(nome, email, nasc, role = "Admin", ativo = true) {
+    constructor(nome, email, nasc, role = "Docente", ativo = true) {
         super(nome, email, nasc, role, ativo)
     }
 
