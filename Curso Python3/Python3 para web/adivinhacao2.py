@@ -20,7 +20,7 @@ def jogar():
     else:
         total_de_tentativas = 5
 
-    for rodada in range(1, total_de_tentativas +1):
+    for rodada in range(1, total_de_tentativas + 1):
         print("tentativa {} de {}".format(rodada, total_de_tentativas))
         chute = int(input("Digite um Número entre 1 e 100: "))
 
