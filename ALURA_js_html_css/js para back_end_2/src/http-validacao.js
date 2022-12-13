@@ -1,3 +1,23 @@
-export default function listaValidade (listaDeLinks) {
-    return "entrou na function"
+function extraiLinks(arrLinks) {
+    return arrLinks.map((objetoLink) => Object.values(objetoLink).join())
 }
+
+async function checaStatus(listaURLs) {
+    const arrStatus = await Promise.all(
+        listaURLs.map(async (url) => {
+            const response = await fetch(url)
+            return response.status
+        })
+    )
+    return arrStatus;
+}
+
+export default async function listaValidade(listaDeLinks) {
+    const links = extraiLinks(listaDeLinks)
+    const status = await checaStatus(links)
+    
+    return status
+}
+
+//[Teste de retorno 400](https://httpstat.us/404).
+//[gatinho salsicha](http://gatinhosalsicha.com.br/)
