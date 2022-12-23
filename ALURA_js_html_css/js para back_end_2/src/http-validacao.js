@@ -15,9 +15,11 @@ async function checaStatus(listaURLs) {
 export default async function listaValidade(listaDeLinks) {
     const links = extraiLinks(listaDeLinks)
     const status = await checaStatus(links)
+
+    return listaDeLinks.map((objeto, indice) => ({
+        ...objeto,
+        status: status [indice]
+    }))
     
     return status
 }
-
-//[Teste de retorno 400](https://httpstat.us/404).
-//[gatinho salsicha](http://gatinhosalsicha.com.br/)
