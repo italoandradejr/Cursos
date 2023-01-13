@@ -6,13 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links</title>
-    <script src="marquinhos.js"></script>
-
 </head>
 
 <body>
-
-    <div id="dvConteudo" style="display:none">
+    
+    <div id="0" style="display:none">
 
         <!--  Alibris - Rakuten - autorenova-->
         <div class="centralizabanner" style="clear: both; text-align: center;">
@@ -62,7 +60,7 @@
 
     </div>
 
-    <div id="dvConteudo" style="display:none">
+    <div id="1" style="display:none">
 
         <!--  Alibris - Rakuten - autorenova-->
         <div class="centralizabanner" style="clear: both; text-align: center;">
@@ -112,7 +110,7 @@
     </div>
 
 
-    <div id="dvConteudo" style="display:none">
+    <div id="2" style="display:none">
 
         <!--Inicio Fertilcaps Monetizze-->
         <div class="separator" style="clear: both; text-align: center;"><b>CHEGOU SUA VEZ DE
@@ -132,7 +130,7 @@
     </div>
 
 
-    <div id="dvConteudo" style="display:none">
+    <div id="3" style="display:none">
         <!--Members.cj - Banner 250 x 250-->
         <div class="centralizabanner" style="clear: both; text-align: center;">
             <a href="https://www.kqzyfj.com/click-100123184-15119334" target="_blank">
@@ -145,7 +143,19 @@
 
     </div>
 
+    <script>
 
+        const xNumeros = [0, 1, 2, 3]
+        const numero = Math.floor(Math.random() * xNumeros.length)
+        const buscaDiv = document.getElementById(numero)
+
+
+        if (buscaDiv.style.display == "none") {
+            document.getElementById(numero).style.display = "block"
+        }
+
+    </script>
+    
 </body>
 
 </html>
