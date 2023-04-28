@@ -21,7 +21,7 @@ cliente.enderecos.push({
 })
 
 const listaApenasApartamentos = cliente.enderecos.filter(
-    (endereco) => endereco.apartamento === true
+    (endBusca) => endBusca.apartamento === true
 )
 
 console.log(listaApenasApartamentos)

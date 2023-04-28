@@ -14,4 +14,4 @@ const cliente = {
     }
 }
 
-cliente.efetuaPagamento(25)
+cliente.efetuaPagamento(225)
