@@ -1,6 +1,6 @@
 import { Personagem } from "./modules/personagem.js"
 
-
+/*
 const personagemPedrinho = new Personagem ()
 personagemPedrinho.nome = 'Pedrinho'
 personagemPedrinho.mana = 12
@@ -20,3 +20,7 @@ console.log(`Insignia de ` + personagemPedrinho.nome + personagemPedrinho.obterI
 console.log("-------------------------------")
 console.log(personagemJose)
 console.log(`Insignia de ` + personagemJose.nome + personagemJose.obterInsignia())
+*/
+
+const personagemPedrinho = new Personagem('Pedrinho', 5, 'Mago')
+const personagemJose = new Personagem('José', 3, 'Arqueiro')
