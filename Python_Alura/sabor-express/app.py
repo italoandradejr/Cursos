@@ -23,12 +23,10 @@ def exibir_opcoes():
 
 def finalizar_app():
     exibir_subtitulo('Finalizando o app\n')
-    
 
 def voltar_ao_menu_principal():
     input('\nDigite uma tecla para voltar ao menu principal ')
     main()
-
 
 def opcao_invalida():
     print('Opção inválida\n')
@@ -83,3 +81,5 @@ if __name__ == '__main__':
     main()
 
     # teste
+
+#teste2
