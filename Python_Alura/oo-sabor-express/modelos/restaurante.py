@@ -1,4 +1,5 @@
 from modelos.avaliacao import Avaliacao
+from modelos.cardapio.item_cardapio import ItemCardapio
 
 class Restaurante:
     restaurantes = []
@@ -8,6 +9,7 @@ class Restaurante:
         self._categoria = categoria.upper()
         self._ativo = False
         self._avaliacao = [] # lista
+        self._cardapio = []
         Restaurante.restaurantes.append(self)
 
     
@@ -16,10 +18,10 @@ class Restaurante:
         return f'{self._nome} | {self._categoria}'
     
     @classmethod
-    def listar_restaurantes(cls):
+    def listar_restaurantes(clsParamentro):
         """Exibe uma lista formatada de todos os restaurantes."""
         print(f'{'Nome do restaurante'.ljust(25)} | {'Categoria'.ljust(25)} |{'Avaliação'.ljust(25)} | {'Status'}')
-        for restaurante_uni in cls.restaurantes:
+        for restaurante_uni in clsParamentro.restaurantes:
             print(f'{restaurante_uni._nome.ljust(25)} | {restaurante_uni._categoria.ljust(25)} | {str(restaurante_uni.media_avaliacoes).ljust(24)} | {restaurante_uni.ativo}')
 
     @property
@@ -45,4 +47,19 @@ class Restaurante:
         media = round(soma_das_notas / quantidade_de_notas, 1)
         return media
 
+
+    def adicionar_no_cardapio(self,item):
+        if isinstance(item, ItemCardapio): # isinstence vai ser verdade se for uma instacia do itemCardapio ou uma instancia derivada do itemCardapio
+            self._cardapio.append(item)
+
+    @property
+    def exibir_cardapio(self):
+        print(f'Cardapio do Restaurante {self._nome}\n')
+        for i, item in enumerate(self._cardapio, 1): # i = indice
+            if hasattr(item, 'descricao'): #hasattr se tiver o atributo 
+                mensagem_prato = f'{i}. Nome:{item._nome} | Preço R$:{item._preco} | Descrição: {item.descricao}'
+                print(mensagem_prato)
+            else:
+                mensagem_bebida = f'{i}. Nome:{item._nome} | Preço: R$:{item._preco} | Tamanho: {item.tamanho}'
+                print(mensagem_bebida)
 
