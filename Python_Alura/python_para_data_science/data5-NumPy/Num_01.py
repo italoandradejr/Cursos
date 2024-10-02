@@ -34,15 +34,20 @@ Moscow_ano2 = Moscow[12:24]
 Moscow_ano3 = Moscow[24:36]
 Moscow_ano4 = Moscow[36:48]
 
-plt.plot(np. arange(1,13,1), Moscow_ano1)
-plt.plot(np. arange(1,13,1), Moscow_ano2)
-plt.plot(np. arange(1,13,1), Moscow_ano3)
-plt.plot(np. arange(1,13,1), Moscow_ano4)
-plt.legend(['ano1','ano2','ano3','ano4'])
+#plt.plot(np. arange(1,13,1), Moscow_ano1)
+#plt.plot(np. arange(1,13,1), Moscow_ano2)
+#plt.plot(np. arange(1,13,1), Moscow_ano3)
+#plt.plot(np. arange(1,13,1), Moscow_ano4)
+#plt.legend(['ano1','ano2','ano3','ano4'])
 #plt.show()
 
 diferenca = np.array_equal(Moscow_ano3, Moscow_ano4) #verifica se os arays são iguais
-print(diferenca)
+#print(diferenca)
 
 np.allclose(Moscow_ano3, Moscow_ano4,10)
 
+x= datas
+y = 2*x+80
+plt.plot(datas,Moscow)
+plt.plot(x,y)
+plt.show()  
